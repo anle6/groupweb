@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroupWeb — Student Projects and Job Board</title>
+    <meta name="description" content="GroupWeb showcases student projects, available positions, and application resources for our community. Browse open roles, learn about the team, and apply online.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
+        header { margin-bottom: 2em; }
+        main { background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}        
+        footer { margin-top: 2em; color: #888; text-align: center; }
+
+        /* Job card styles */
+        .jobs-list { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+        .job-card {
+            background: #ffffff;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .job-card h3 { margin: 0; font-size: 1.1rem; }
+        .job-meta { color: #666; font-size: 0.95rem; }
+        .job-actions { margin-top: 0.5rem; }
+        .apply-btn {
+            display: inline-block;
+            padding: 0.4rem 0.7rem;
+            background: #0078d4;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Available Positions</h1>
+        <nav>
+            <a href="Index.html">Home</a> |
+            <a href="Jobs.html">Positions</a> |
+            <a href="Apply.html">Apply</a> |
+            <a href="About.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Current Job Openings</h2>
+        <div class="jobs-list">
+            <article class="job-card">
+                <h3><a href="Cybersecurity_Specialist.html">Cybersecurity Specialist</a></h3>
+                <div class="job-meta">Location: Remote • Posted: Oct 2025</div>
+                <p>We are looking for a cybersecurity specialist to help secure our web properties and provide threat analysis.</p>
+                <div class="job-actions"><a class="apply-btn" href="Apply.html">Apply</a></div>
+            </article>
+
+            <article class="job-card">
+                <h3><a href="UI_UX_Designer.html">UI/UX Designer</a></h3>
+                <div class="job-meta">Location: On-site • Posted: Sep 2025</div>
+                <p>Design intuitive user interfaces for student projects and help improve the overall user experience.</p>
+                <div class="job-actions"><a class="apply-btn" href="Apply.html">Apply</a></div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 GroupWeb — All rights reserved
+    </footer>
+</body>
+</html>

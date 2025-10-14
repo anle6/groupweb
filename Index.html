@@ -2,32 +2,187 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GroupWeb — Student Projects and Job Board</title>
-    <meta name="description" content="GroupWeb showcases student projects, available positions, and application resources for our community. Browse open roles, learn about the team, and apply online.">
+    <meta name="description" content="Glitzers showcases student projects, available positions, and application resources for our community. Browse open roles, learn about the team, and apply online.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glitzers — Student Projects and Job Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 2em; background: #f9f9f9; }
-        header { margin-bottom: 2em; }
-        main { background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
-        footer { margin-top: 2em; color: #888; text-align: center; }
+        /* Base styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #0078d4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+
+        /* Navigation styles */
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #cce4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #005fa3;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            background-image: url('https://source.unsplash.com/1600x900/?technology,office');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid #0078d4;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .cta-btn {
+            background-color: #0078d4;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #005fa3;
+        }
+
+        /* Main Section */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        main h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #cce4ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+
+            main h2 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Welcome to GroupWeb</h1>
+    <h1>Glitzers</h1>
         <nav>
-            <a href="Index.html">Home</a> |
-            <a href="Jobs.html">Positions</a> |
-            <a href="Apply.html">Application</a> |
+            <a href="Index.html">Home</a>
+            <a href="Jobs.html">Positions</a>
+            <a href="Apply.html">Application</a>
             <a href="About.html">About</a>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+    <h2>Welcome to Glitzers</h2>
+        <p>We showcase student projects, available positions, and help you take the next step in your career. Browse open roles, apply online, and join a thriving community of innovators.</p>
+        <a href="Apply.html" class="cta-btn">Apply Now</a>
+    </section>
+
+    <!-- Main Content -->
     <main>
-        <h2>Glitzers.inc</h2>
-        <p>Glitzers.inc is a cutting-edge technology development company specializing in creating stunning, user-friendly websites and applications. Our team of experts is dedicated to delivering high-quality solutions tailored to meet the unique needs of each client.</p>
+    <h2>About Glitzers.inc</h2>
+        <p>Glitzers.inc is a cutting-edge technology development company specializing in creating stunning, user-friendly websites and applications. Our team of experts is dedicated to delivering high-quality solutions tailored to meet the unique needs of each client. We bring innovation to life through creativity and precision.</p>
+        <p>Whether you're looking for a custom-built website, a mobile app, or a full digital transformation, we’re here to help you achieve your goals with the latest technologies and best practices.</p>
     </main>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2025 GroupWeb — All rights reserved
+    <p>&copy; 2025 Glitzers — All rights reserved</p>
+        <p>
+            <a href="Privacy.html">Privacy Policy</a> |
+            <a href="Contact.html">Contact</a> |
+            <a href="https://twitter.com/glitzers" target="_blank">Twitter</a> |
+            <a href="https://linkedin.com/company/glitzers" target="_blank">LinkedIn</a>
+        </p>
     </footer>
+
 </body>
 </html>

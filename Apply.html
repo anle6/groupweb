@@ -1,169 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Apply — GroupWeb</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		body { font-family: Arial, Helvetica, sans-serif; margin: 2em; background: #f9f9f9; }
-		main { max-width: 760px; margin: 0 auto; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-		label { display: block; margin-top: 0.75rem; }
-		input[type="text"], input[type="email"], input[type="date"], select, textarea { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
-		.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-		.small { width: 160px; }
-		fieldset { margin-top: 0.75rem; padding: 0.75rem; border-radius: 6px; }
-		.checkboxes { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-		.error { color: #b00020; font-size: 0.9rem; }
-		.submit-row { margin-top: 1rem; }
-		button { background: #0078d4; color: white; border: none; padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; }
-	</style>
+    <meta charset="utf-8">
+    <title>Job Application — Glitzers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            color: #0078d4;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        label {
+            display: block;
+            margin: 0.8rem 0 0.3rem;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .checkboxes label {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        button {
+            background-color: #0078d4;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+    </style>
 </head>
 <body>
-	<main>
-		<h1>Job Application</h1>
-		<p>Please complete the form below to register your interest in the advertised position. Fields marked with * are required.</p>
 
-	<form id="applicationForm" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" novalidate>
-			<label for="jobRef">Job reference number *</label>
-			<select id="jobRef" name="jobRef" required>
-				<option value="" disabled selected>Select a job...</option>
-				<option value="CYB-001">CYB-001 — Cybersecurity Specialist</option>
-				<option value="UIX-002">UIX-002 — UI/UX Designer</option>
-			</select>
+<main>
+    <h1>Job Application</h1>
+    <p>Please complete the form to apply for the available position. All fields marked with * are required.</p>
 
-			<div class="two-col">
-				<div>
-					<label for="firstName">First name * (max 20 letters)</label>
-					<input id="firstName" name="firstName" type="text" maxlength="20" pattern="^[A-Za-z]+$" required title="Enter up to 20 alphabetic characters">
-				</div>
-				<div>
-					<label for="lastName">Last name * (max 20 letters)</label>
-					<input id="lastName" name="lastName" type="text" maxlength="20" pattern="^[A-Za-z]+$" required title="Enter up to 20 alphabetic characters">
-				</div>
-			</div>
+    <form id="applicationForm" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" novalidate>
+        <label for="jobRef">Job Reference *</label>
+        <select id="jobRef" name="jobRef" required>
+            <option value="" disabled selected>Select a job...</option>
+            <option value="CYB-001">CYB-001 — Cybersecurity Specialist</option>
+            <option value="UIX-002">UIX-002 — UI/UX Designer</option>
+        </select>
 
-			<label for="dob">Date of birth * (dd/mm/yyyy)</label>
-			<!-- use text input with pattern since HTML date control shows yyyy-mm-dd in some browsers -->
-			<input id="dob" name="dob" type="text" placeholder="dd/mm/yyyy" pattern="^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$" required title="Enter date as dd/mm/yyyy">
+        <label for="firstName">First Name *</label>
+        <input id="firstName" name="firstName" type="text" required maxlength="20" placeholder="Your first name">
 
-			<fieldset>
-				<legend>Gender *</legend>
-				<label><input type="radio" name="gender" value="female" required> Female</label>
-				<label><input type="radio" name="gender" value="male"> Male</label>
-				<label><input type="radio" name="gender" value="other"> Other</label>
-			</fieldset>
+        <label for="lastName">Last Name *</label>
+        <input id="lastName" name="lastName" type="text" required maxlength="20" placeholder="Your last name">
 
-			<label for="street">Street Address * (max 40 chars)</label>
-			<input id="street" name="street" type="text" maxlength="40" required>
+        <label for="dob">Date of Birth *</label>
+        <input id="dob" name="dob" type="date" required>
 
-			<label for="suburb">Suburb/Town * (max 40 chars)</label>
-			<input id="suburb" name="suburb" type="text" maxlength="40" required>
+        <fieldset>
+            <legend>Gender *</legend>
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+        </fieldset>
 
-			<div class="two-col">
-				<div>
-					<label for="state">State *</label>
-					<select id="state" name="state" required>
-						<option value="" disabled selected>Select state</option>
-						<option value="VIC">VIC</option>
-						<option value="NSW">NSW</option>
-						<option value="QLD">QLD</option>
-						<option value="NT">NT</option>
-						<option value="WA">WA</option>
-						<option value="SA">SA</option>
-						<option value="TAS">TAS</option>
-						<option value="ACT">ACT</option>
-					</select>
-				</div>
-				<div>
-					<label for="postcode">Postcode * (4 digits)</label>
-					<input id="postcode" name="postcode" type="text" pattern="^\d{4}$" maxlength="4" required title="Enter a 4-digit postcode">
-				</div>
-			</div>
+        <label for="email">Email Address *</label>
+        <input id="email" name="email" type="email" required placeholder="Your email address">
 
-			<label for="email">Email address *</label>
-			<input id="email" name="email" type="email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Enter a valid email address">
+        <label for="phone">Phone Number *</label>
+        <input id="phone" name="phone" type="text" required pattern="^[0-9 ]{8,12}$" placeholder="Your phone number">
 
-			<label for="phone">Phone number * (8 to 12 digits, spaces allowed)</label>
-			<input id="phone" name="phone" type="text" required pattern="^[0-9 ]{8,12}$" title="Enter 8 to 12 digits or spaces">
+        <label for="street">Street Address *</label>
+        <input id="street" name="street" type="text" required maxlength="40" placeholder="Your street address">
 
-			<fieldset>
-				<legend>Required technical skills *</legend>
-				<div class="checkboxes" id="techSkills">
-					<label><input type="checkbox" name="skills" value="html" required> HTML</label>
-					<label><input type="checkbox" name="skills" value="css"> CSS</label>
-					<label><input type="checkbox" name="skills" value="js"> JavaScript</label>
-					<label><input type="checkbox" name="skills" value="sec"> Security</label>
-				</div>
-			</fieldset>
+        <label for="suburb">Suburb/Town *</label>
+        <input id="suburb" name="suburb" type="text" required maxlength="40" placeholder="Suburb or town">
 
-			<label for="other">Other skills (optional)</label>
-			<textarea id="other" name="other" rows="4" placeholder="List other skills or notes (optional)"></textarea>
+        <label for="state">State *</label>
+        <select id="state" name="state" required>
+            <option value="" disabled selected>Select state</option>
+            <option value="VIC">VIC</option>
+            <option value="NSW">NSW</option>
+            <option value="QLD">QLD</option>
+            <option value="WA">WA</option>
+            <option value="SA">SA</option>
+            <option value="TAS">TAS</option>
+            <option value="ACT">ACT</option>
+            <option value="NT">NT</option>
+        </select>
 
-			<div class="submit-row">
-				<button type="submit">Apply</button>
-				<div id="formError" class="error" aria-live="polite"></div>
-			</div>
-		</form>
+        <label for="postcode">Postcode *</label>
+        <input id="postcode" name="postcode" type="text" required pattern="^[0-9]{4}$" maxlength="4" placeholder="Your postcode">
 
-		<script>
-			// Validate that at least one skills checkbox is checked (HTML required on one won't work across group)
-			const form = document.getElementById('applicationForm');
-			const skills = document.querySelectorAll('#techSkills input[type="checkbox"]');
-			const state = document.getElementById('state');
-			const postcode = document.getElementById('postcode');
-			const formError = document.getElementById('formError');
+        <label for="resume">Resume (PDF only) *</label>
+        <input id="resume" name="resume" type="file" accept=".pdf" required>
 
-			function statePostcodeMatches(stateVal, pc) {
-				// Basic mapping for Australian postcodes by first digit ranges
-				// VIC (3,8), NSW (1,2), QLD (4,9), NT (0), WA (6), SA (5), TAS (7), ACT (0,2)
-				if (!pc || pc.length !== 4) return false;
-				const first = pc.charAt(0);
-				switch(stateVal) {
-					case 'VIC': return ['3','8'].includes(first);
-					case 'NSW': return ['1','2'].includes(first);
-					case 'QLD': return ['4','9'].includes(first);
-					case 'NT': return first === '0';
-					case 'WA': return first === '6';
-					case 'SA': return first === '5';
-					case 'TAS': return first === '7';
-					case 'ACT': return ['0','2'].includes(first);
-					default: return true;
-				}
-			}
+        <fieldset>
+            <legend>Employment Status *</legend>
+            <label><input type="radio" name="employmentStatus" value="employed" required> Employed</label>
+            <label><input type="radio" name="employmentStatus" value="unemployed"> Unemployed</label>
+            <label><input type="radio" name="employmentStatus" value="student"> Student</label>
+        </fieldset>
 
-			form.addEventListener('submit', function(e) {
-				formError.textContent = '';
-				// Use HTML5 validity first
-				if (!form.checkValidity()) {
-					form.reportValidity();
-					e.preventDefault();
-					return;
-				}
+        <fieldset>
+            <legend>Technical Skills (select at least one) *</legend>
+            <label><input type="checkbox" name="skills" value="html"> HTML / CSS</label>
+            <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label>
+            <label><input type="checkbox" name="skills" value="node"> Node.js</label>
+            <label><input type="checkbox" name="skills" value="python"> Python</label>
+            <label><input type="checkbox" name="skills" value="security"> Security / Cybersecurity</label>
+        </fieldset>
 
-				// Check skills at least one checked
-				const anySkill = Array.from(skills).some(ch => ch.checked);
-				if (!anySkill) {
-					formError.textContent = 'Please select at least one required technical skill.';
-					e.preventDefault();
-					return;
-				}
+        <label for="comments">Additional Comments</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Any additional information you'd like to provide..."></textarea>
 
-				// Check postcode/state matching
-				const st = state.value;
-				const pc = postcode.value.trim();
-				if (!statePostcodeMatches(st, pc)) {
-					formError.textContent = 'Postcode does not match selected state.';
-					e.preventDefault();
-					return;
-				}
+        <div class="checkboxes">
+            <label><input type="checkbox" name="terms" required> I agree to the terms and conditions.</label>
+        </div>
 
-				// All checks pass — allow the form to submit via POST to the server action.
-				// Do not call preventDefault() here so the browser will send the POST request.
-				formError.textContent = '';
-				return; // allow default submit to proceed
-			});
-		</script>
-	</main>
+    <button type="submit">Apply</button>
+    </form>
+
+    <div id="errorMessages" class="error"></div>
+</main>
+
+<script>
+    document.getElementById('applicationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // we'll submit programmatically if all checks pass
+
+        const errorMessages = [];
+        const form = event.target;
+
+        // Helper: postcode -> likely state mapping (very simple heuristic for AU postcodes)
+        function postcodeMatchesState(pc, state) {
+            if (!/^[0-9]{4}$/.test(pc)) return false;
+            const first = pc.charAt(0);
+            // Common Australian postcode leading digits by state (simplified)
+            const mapping = {
+                'VIC': ['3','8'],
+                'NSW': ['1','2'],
+                'QLD': ['4','9'],
+                'WA' : ['6'],
+                'SA' : ['5'],
+                'TAS': ['7'],
+                'ACT': ['0','2'],
+                'NT' : ['0']
+            };
+            return mapping[state] ? mapping[state].includes(first) : true;
+        }
+
+        // Basic required checks (trimmed)
+        if (!form.jobRef.value) errorMessages.push('Job reference is required.');
+        if (!form.firstName.value.trim()) errorMessages.push('First name is required.');
+        if (!form.lastName.value.trim()) errorMessages.push('Last name is required.');
+        if (!form.dob.value) errorMessages.push('Date of birth is required.');
+        if (!form.gender.value) errorMessages.push('Gender is required.');
+
+        if (!form.email.value.trim() || !/\S+@\S+\.\S+/.test(form.email.value)) errorMessages.push('Valid email address is required.');
+        if (!form.phone.value.trim() || !/^[0-9 ]{8,12}$/.test(form.phone.value)) errorMessages.push('Valid phone number is required (8–12 digits/spaces).');
+
+        if (!form.street.value.trim()) errorMessages.push('Street address is required.');
+        if (!form.suburb.value.trim()) errorMessages.push('Suburb/Town is required.');
+        if (!form.state.value) errorMessages.push('State is required.');
+        if (!form.postcode.value.trim() || !/^[0-9]{4}$/.test(form.postcode.value)) errorMessages.push('Valid 4-digit postcode is required.');
+
+        if (!form.resume.files.length) errorMessages.push('Resume (PDF) is required.');
+
+        // Ensure at least one technical skill checkbox is selected
+        const skills = Array.from(form.querySelectorAll('input[name="skills"]'));
+        const anySkill = skills.some(s => s.checked);
+        if (!anySkill) errorMessages.push('Please select at least one technical skill.');
+
+        if (!form.terms.checked) errorMessages.push('You must agree to the terms and conditions.');
+
+        // Postcode -> State plausibility
+        if (form.state.value && form.postcode.value && !postcodeMatchesState(form.postcode.value, form.state.value)) {
+            errorMessages.push('Postcode does not look consistent with the selected state.');
+        }
+
+        const errorDiv = document.getElementById('errorMessages');
+        if (errorMessages.length > 0) {
+            errorDiv.innerHTML = errorMessages.join('<br>');
+            errorDiv.focus();
+        } else {
+            errorDiv.innerHTML = '';
+            // All client-side checks passed; submit to server
+            form.submit();
+        }
+    });
+</script>
+
 </body>
 </html>
-

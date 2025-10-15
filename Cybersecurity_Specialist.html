@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Cybersecurity Specialist — Job Description (CYB-001)</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background-color: #0078d4; color: white; padding: 20px; text-align: center; }
-        header h1 { font-size: 2.2rem; margin: 0 }
-        header h2 { font-size: 1rem; margin: 6px 0 0 0; font-weight:400 }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
+    .hero { background-image: url('../Images/background cybersecurity specialist.jpg'); background-size: cover; background-position: center; padding: 60px 20px; color: white; position: relative; }
+    .hero::after { content:''; position:absolute; left:0;top:0;right:0;bottom:0; background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)); pointer-events:none }
+    .hero > * { position: relative; z-index: 1 }
+    header { background-color: #0078d4; color: white; padding: 20px; text-align: center; }
+    header h1 { font-size: 2.2rem; margin: 0 }
+    header h2 { font-size: 1rem; margin: 6px 0 0 0; font-weight:400 }
         main { padding: 2rem; max-width: 960px; margin: 0 auto; background-color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 8px; }
         section, aside { margin-bottom: 2rem; }
         h2 { color: #0078d4; font-size: 1.6rem; }
@@ -19,10 +22,30 @@
     </style>
 </head>
 <body>
-<header>
-    <h1>Cybersecurity Specialist</h1>
-    <h2>Reference: CYB-001</h2>
-</header>
+    <header style="background:#0078d4;color:#fff;padding:12px 20px;">
+        <div style="max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:12px;">
+                <a href="Index.html" aria-label="Glitzers home"><img src="../Images/Logos.png" alt="Glitzers logo" style="height:56px;width:auto;display:block;border:0;"></a>
+                <div>
+                    <h1 style="margin:0;font-size:1.1rem;color:#fff;">Glitzers</h1>
+                    <p style="margin:0;font-size:0.85rem;color:#fff;">Technology Provider &amp; Online Security</p>
+                </div>
+            </div>
+            <nav>
+                <a href="Index.html">Home</a> |
+                <a href="Jobs.html">Positions</a> |
+                <a href="Apply.html">Apply</a> |
+                <a href="About.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" role="region" aria-labelledby="job-title">
+        <div style="max-width:1000px;margin:0 auto;text-align:center;">
+            <h1 id="job-title">Cybersecurity Specialist</h1>
+            <h2>Reference: CYB-001</h2>
+        </div>
+    </section>
 <main>
     <section aria-labelledby="overview">
         <h2 id="overview">Role Overview</h2>

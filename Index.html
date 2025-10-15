@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Glitzers showcases student projects, available positions, and application resources for our community. Browse open roles, learn about the team, and apply online.">
+    <meta name="description" content="Glitzers showcases technology solutions, available positions, and application resources for our community. Browse open roles, learn about the team, and apply online.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitzers — Student Projects and Job Board</title>
+    <title>Glitzers — Technology Provider &amp; Online Security</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         /* Base styles */
@@ -48,12 +48,33 @@
         .hero {
             background-color: #005fa3;
             color: white;
-            padding: 80px 20px;
+            /* reduce padding to avoid upscaling the background too much */
+            padding: 48px 20px;
             text-align: center;
-            background-image: url('https://source.unsplash.com/1600x900/?technology,office');
+            background-image: url('../Images/cybersecurity home page.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
             border-bottom: 5px solid #0078d4;
+            position: relative;
+            overflow: hidden;
+            /* rendering hint: may help on some browsers; not a substitute for a higher-res image */
+            image-rendering: auto;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+            pointer-events: none;
+        }
+        .hero > * {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h2 {
@@ -149,8 +170,16 @@
 <body>
 
     <!-- Header -->
-    <header>
-    <h1>Glitzers</h1>
+    <header style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+                <a href="Index.html" aria-label="Glitzers home">
+                <img src="../Images/Logos.png" alt="Glitzers logo" style="height:56px;width:auto;display:block;border:0;">
+            </a>
+            <div>
+                <h1 style="margin:0;font-size:1.4rem;">Glitzers</h1>
+                <p style="margin:0;font-size:0.85rem;color:#fff;">Technology Provider &amp; Online Security</p>
+            </div>
+        </div>
         <nav>
             <a href="Index.html">Home</a>
             <a href="Jobs.html">Positions</a>
@@ -162,15 +191,15 @@
     <!-- Hero Section -->
     <section class="hero">
     <h2>Welcome to Glitzers</h2>
-        <p>We showcase student projects, available positions, and help you take the next step in your career. Browse open roles, apply online, and join a thriving community of innovators.</p>
+    <p>We showcase technology solutions, available positions, and help you take the next step in your career. Browse open roles, apply online, and join a thriving community of innovators.</p>
         <a href="Apply.html" class="cta-btn">Apply Now</a>
     </section>
 
     <!-- Main Content -->
     <main>
     <h2>About Glitzers.inc</h2>
-        <p>Glitzers.inc is a cutting-edge technology development company specializing in creating stunning, user-friendly websites and applications. Our team of experts is dedicated to delivering high-quality solutions tailored to meet the unique needs of each client. We bring innovation to life through creativity and precision.</p>
-        <p>Whether you're looking for a custom-built website, a mobile app, or a full digital transformation, we’re here to help you achieve your goals with the latest technologies and best practices.</p>
+        <p>At Glitzers.inc our mission is to deliver innovative & reliable IT solutions that promote business growth. We offer services including software development, cloud computing, IT consulting, cybersecurity, data analytics, and managed IT services</p>
+        <p>Equipped with a team of talented experts and a love for technology, we assist companies of all sizes in harnessing the potential of digital transformation. We are devoted to delivering high-quality, scalable, and affordable solutions specifically designed to address the distinct requirements of our clients.</p>
     </main>
 
     <!-- Footer -->

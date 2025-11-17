@@ -1,0 +1,39 @@
+/* Slightly larger breakpoints and spacing adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero { padding: 56px 0; }
+  .job-card { padding: 18px; }
+  main { padding: 34px 18px; margin-top: -48px; }
+}
+
+/* Very small screens adjust font-size */
+@media (max-width: 420px) {
+  body { font-size: 15px; }
+  .site-header h1 { font-size: 1.1rem; }
+  /* logo sizing for very small screens */
+  .site-header .brand .logo-link img { height: 40px; max-height: 40px; }
+  .cta-btn { padding: 10px 14px; font-size: 0.95rem; }
+}
+
+/* Enforce compact logo size across breakpoints (override earlier rules if necessary) */
+.site-header .brand .logo-link img {
+  height: 48px;
+  max-height: 48px;
+}
+
+/* FORCE: Strong override to ensure logo uses compact size for testing */
+.site-header .brand .logo-link img,
+.site-header .brand img,
+.logo img {
+  height: 40px !important;
+  max-height: 40px !important;
+  width: auto !important;
+}
+
+@media (max-width: 420px) {
+  .site-header .brand .logo-link img,
+  .site-header .brand img,
+  .logo img {
+    height: 32px !important;
+    max-height: 32px !important;
+  }
+}
